@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-gray-800 bg-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-12 md:py-16 lg:py-24;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply text-white bg-primary-600 hover:bg-primary-700 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply text-primary-700 bg-primary-50 hover:bg-primary-100 focus:ring-primary-500;
+  }
+  
+  .btn-accent {
+    @apply text-white bg-beige-500 hover:bg-beige-600 focus:ring-beige-400;
+  }
+
+  .heading-xl {
+    @apply text-3xl font-bold md:text-4xl lg:text-5xl;
+  }
+  
+  .heading-lg {
+    @apply text-2xl font-bold md:text-3xl lg:text-4xl;
+  }
+  
+  .heading-md {
+    @apply text-xl font-bold md:text-2xl lg:text-3xl;
+  }
+  
+  .heading-sm {
+    @apply text-lg font-bold md:text-xl;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+  
+  .text-md {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+    line-height: 1.75;
+  }
+}
