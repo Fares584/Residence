@@ -1,10 +1,5 @@
-import { Database } from './database.types';
-
-export type Tables<T extends keyof Database['public']['Tables']> = Database['public']['Tables'][T]['Row'];
-export type Enums<T extends keyof Database['public']['Enums']> = Database['public']['Enums'][T];
-
 export interface Property {
-  id: string;
+  id: number;
   title: string;
   type: 'apartment' | 'studio' | 'house';
   status: 'for_sale' | 'for_rent' | 'for_rent_or_sale';
@@ -41,10 +36,8 @@ export interface VisitRequest {
   propertyId?: number;
   preferredDate: string;
   preferredTime: string;
-  message?: string;
-  status?: 'pending' | 'confirmed' | 'cancelled';
+  message: string;
   createdAt?: string;
-  updatedAt?: string;
 }
 
 export interface ContactMessage {
@@ -54,16 +47,7 @@ export interface ContactMessage {
   phone?: string;
   subject: string;
   message: string;
-  status?: 'unread' | 'read' | 'replied';
   createdAt?: string;
-  updatedAt?: string;
-}
-
-export interface AdminUser {
-  id: string;
-  email: string;
-  createdAt: string;
-  lastLogin?: string;
 }
 
 export interface PointOfInterest {
@@ -84,20 +68,4 @@ export interface Testimonial {
   image?: string;
   content: string;
   rating: number;
-}
-
-export interface DashboardStats {
-  totalProperties: number;
-  totalVisitRequests: number;
-  totalContactMessages: number;
-  propertiesByType: {
-    type: string;
-    count: number;
-  }[];
-  visitRequestsByStatus: {
-    status: string;
-    count: number;
-  }[];
-  recentVisitRequests: VisitRequest[];
-  recentContactMessages: ContactMessage[];
 }
